@@ -1,2 +1,9 @@
 %p MyLinks Login Successfull
+
 = link_to "logout [X]", logout_path
+%br
+%br
+
+- @links.each do |l|
+	= link_to l.name, l.link
+	%br
