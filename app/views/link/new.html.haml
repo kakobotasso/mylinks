@@ -1,0 +1,17 @@
+= form_for @link do |f|
+	<label> Name: <br/>
+	= f.text_field :name
+	<br/>
+	</label>
+
+	<label> Category: <br/>
+	= f.select :category, category, { :prompt => "Choose one category" }
+	<br/>
+	</label>
+
+	<label> Link: <br/>
+	= f.text_field :link
+	<br/>
+	</label>
+
+	= f.submit "Save Link"

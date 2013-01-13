@@ -7,7 +7,12 @@ Mylinks::Application.routes.draw do
   end
 
   controller :dashboard do
-    get "/mylinks", :action => :index, :as => :dashboard
+    get "/my-links", :action => :index, :as => :dashboard
+  end
+
+  controller :link do
+  	get "/new-link", :action => :new, :as => :links
+  	post "/new-link", :action => :create
   end
 
 end
