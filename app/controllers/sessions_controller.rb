@@ -1,0 +1,26 @@
+class SessionsController < ApplicationController
+	def new
+	end
+
+	def create
+		reset_session
+
+		user = User.find_by_login(params[:login])
+		user ||= User.new
+		password_encripted = Digest::SHA1.hexdigest(params[:password])
+
+		if user.password == password_encripted
+			session[:user_id] = user.id
+			redirect_to dashboard_path 
+		else
+			flash.now[:notice] = "There was a mistake here. Please, try again"
+			render :new
+		end
+	end
+
+	def destroy
+		reset_session
+		redirect_to login_path
+	end
+
+end
