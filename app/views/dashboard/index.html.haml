@@ -12,7 +12,7 @@
 				%ul
 					- @facebook.each do |l|
 						%li
-							= link_to l.name, l.link
+							= link_to l.name, l.link, :target => "_blank"
 
 		- if @gag.any?
 			.categoryBar
@@ -23,7 +23,7 @@
 				%ul
 					- @gag.each do |l|
 						%li
-							= link_to l.name, l.link
+							= link_to l.name, l.link, :target => "_blank"
 
 		- if @article.any?
 			.categoryBar
@@ -34,4 +34,4 @@
 				%ul
 					- @article.each do |l|
 						%li
-							= link_to l.name, l.link
+							= link_to l.name, l.link, :target => "_blank"
