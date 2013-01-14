@@ -1,6 +1,29 @@
-= flash[:notice]
+<!DOCTYPE html>
+%html
+	%head
+		%title MyLinks
+		= stylesheet_link_tag    "application", :media => "all"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
 
-= form_tag login_path do
-  = text_field_tag :login
-  = password_field_tag :password
-  = submit_tag "Log in"
+	%body
+		= flash[:notice]
+
+		#wrapperLogin
+			= link_to image_tag("mylinks-logo.png", :alt => "MyLinks"), login_path, :id => "logoLogin"
+
+			#loginBox
+				= form_tag login_path, :autocomplete => 'off' do
+					%ul
+						%li
+							%label
+								%span Login:
+								= text_field_tag :login, "", :class => "text"
+
+						%li
+							%label
+								%span Password:
+								= password_field_tag :password, "", :class => "text"
+
+						%li
+							= image_submit_tag("bt-login.png")

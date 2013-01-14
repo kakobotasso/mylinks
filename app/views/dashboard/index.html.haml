@@ -1,9 +1,37 @@
-%p MyLinks Login Successfull
+#dashboard
+	#linksBar
+		= link_to image_tag("bt-new-link.png", :alt => "New link"), links_path
 
-= link_to "logout [X]", logout_path
-%br
-%br
+	#wrapperLinks
+		- if @facebook.any?
+			.categoryBar
+				= image_tag "facebook-image.png", :alt => "Facebook"
+				%span Facebook
 
-- @links.each do |l|
-	= link_to l.name, l.link
-	%br
+			.contentLinks
+				%ul
+					- @facebook.each do |l|
+						%li
+							= link_to l.name, l.link
+
+		- if @gag.any?
+			.categoryBar
+				= image_tag "gag-image.png", :alt => "9GAG"
+				%span 9GAG
+
+			.contentLinks
+				%ul
+					- @gag.each do |l|
+						%li
+							= link_to l.name, l.link
+
+		- if @article.any?
+			.categoryBar
+				= image_tag "blog-image.png", :alt => "Article"
+				%span Article
+
+			.contentLinks
+				%ul
+					- @article.each do |l|
+						%li
+							= link_to l.name, l.link

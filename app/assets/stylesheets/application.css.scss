@@ -11,3 +11,61 @@
  *= require_self
  *= require_tree .
  */
+
+$font: "Tahoma", Verdana;
+
+*{
+	border:0px;
+	margin:0px;
+	padding:0px;
+	outline:0;
+}
+
+ul, ul li{ list-style-type:none; }
+
+body{
+	background:#012D5F;
+	font-family:$font;
+}
+
+@mixin inputText(){
+	float:left;
+	width:430px;
+	padding:15px 10px 22px 10px;
+    background:url("bg-input.png") no-repeat 0px 0px;
+    font-family:$font;
+	font-size:20px;
+	color:#012D5F;
+}
+
+#wrapper{
+	width:991px;
+	margin:0 auto;
+}
+
+header{
+	float:left;
+	width:100%;
+	padding:20px 0px 0px 0px;
+	#mylinksLogo{
+		float:left;
+	}
+	#rightHeader{
+		float:right;
+		padding:5px 0px 0px 0px;
+		span{
+			float:left;
+			width:100%;
+			text-align:right;
+			color:#fff;
+			font-family:$font;
+			font-size:18px;
+			a{
+				text-decoration:none;
+				color:#fff;
+				font-family:$font;
+				font-size:16px;
+			}
+		}
+	}
+}

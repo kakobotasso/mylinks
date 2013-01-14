@@ -1,0 +1,59 @@
+$font: "Tahoma", Verdana;
+
+@mixin inputText(){
+	float:left;
+	width:430px;
+	padding:15px 10px 22px 10px;
+    background:url("bg-input.png") no-repeat 0px 0px;
+    font-family:$font;
+	font-size:20px;
+	color:#012D5F;
+}
+
+#linksBar{
+	float:left;
+	width:100%;
+	height:68px;
+	background:url("links-bar.gif") no-repeat 0px 0px;
+	display:inline;
+	margin:20px 0px 20px 0px;
+}
+
+
+#wrapperForm{
+	float: left;
+	width:100%;
+	ul{
+		float: left;
+		width:100%;
+		li{
+			float: left;
+			width:100%;
+			padding:0px 0px 15px 0px;
+			span{
+				float:left;
+				width:100%;
+				font-family:$font;
+				font-size:20px;
+				font-weight:bold;
+				color:#FEEF00;
+			}
+			select{
+				float:left;
+				width:440px;
+				padding:10px 0px;
+				display:inline;
+				margin:0px 0px 10px 0px;
+			}
+			.text input{
+				@include inputText();
+			}
+			.submitButton input{
+				background:url("bt-create-link.png") no-repeat 0px 0px;
+				text-indent:-50000px;
+				width:148px;
+				height:53px;
+			}
+		}
+	}
+}

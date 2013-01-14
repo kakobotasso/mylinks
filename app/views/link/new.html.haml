@@ -1,17 +1,23 @@
-= form_for @link do |f|
-	<label> Name: <br/>
-	= f.text_field :name
-	<br/>
-	</label>
+#linksBar
 
-	<label> Category: <br/>
-	= f.select :category, category, { :prompt => "Choose one category" }
-	<br/>
-	</label>
+#wrapperForm
+	= form_for @link do |f|
+		%ul
+			%li
+				%label.text
+					%span Name:
+					= f.text_field :name
 
-	<label> Link: <br/>
-	= f.text_field :link
-	<br/>
-	</label>
+			%li
+				%label
+					%span Category:
+					= f.select :category, category, { :prompt => "Choose one category" }
 
-	= f.submit "Save Link"
+			%li
+				%label.text
+					%span Link:
+					= f.text_field :link
+
+			%li
+				%span.submitButton
+					= f.submit
