@@ -17,6 +17,7 @@
 				%label.text
 					%span Link:
 					= f.text_field :link
+					= f.hidden_field :user_id, :value => @user
 
 			%li
 				%span.submitButton

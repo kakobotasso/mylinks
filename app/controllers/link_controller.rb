@@ -5,6 +5,7 @@ class LinkController < ApplicationController
 
 	def new
 		@link = Link.new
+		@user = session[:user_id]
 	end
 
 	def create
@@ -22,7 +23,9 @@ class LinkController < ApplicationController
 		@category = [
 			["Facebook", 0],
 			["9GAG", 1],
-			["Article", 2]
+			["Article", 2],
+			["Technology", 3],
+			["Other", 4]
 		]
 	end
 end
