@@ -35,3 +35,25 @@
 					- @article.each do |l|
 						%li
 							= link_to l.name, l.link, :target => "_blank"
+
+		- if @technology.any?
+			.categoryBar
+				= image_tag "technology-image.png", :alt => "Technology"
+				%span Technology
+
+			.contentLinks
+				%ul
+					- @technology.each do |l|
+						%li
+							= link_to l.name, l.link, :target => "_blank"
+
+		- if @other.any?
+			.categoryBar
+				= image_tag "other-image.png", :alt => "Other"
+				%span Other
+
+			.contentLinks
+				%ul
+					- @other.each do |l|
+						%li
+							= link_to l.name, l.link, :target => "_blank"
