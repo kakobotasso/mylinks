@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
 		reset_session
 
 		user = User.find_by_login(params[:login])
-		user ||= User.new
+		#user ||= User.new
 		password_encripted = Digest::SHA1.hexdigest(params[:password])
 
-		if user.password == password_encripted
+		if user && user.password == password_encripted
 			session[:user_id] = user.id
 			redirect_to dashboard_path 
 		else
