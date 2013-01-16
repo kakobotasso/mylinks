@@ -5,11 +5,11 @@ class LinkController < ApplicationController
 
 	def new
 		@link = Link.new
-		@user = session[:user_id]
 	end
 
 	def create
 		@link = Link.new(params[:link])
+		@link.user_id = session[:user_id]
 
 		if @link.save
 			redirect_to dashboard_path, notice: 'Link saved successfully'
