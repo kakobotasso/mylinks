@@ -1,4 +1,5 @@
 $font: "Tahoma", Verdana;
+$errorColor: #EE0000;
 
 @mixin inputText(){
 	float:left;
@@ -55,5 +56,29 @@ $font: "Tahoma", Verdana;
 				height:53px;
 			}
 		}
+	}
+	#error_explanation{
+		float:left;
+		width:430px;
+		background:#fff;
+		border:5px solid $errorColor;
+		margin:0px 0px 20px 0px;
+		#labelErrors{
+			float:left;
+			width:420px;
+			padding:5px 0px 5px 10px;
+			background:$errorColor;
+			font-weight:bold;
+			color:#FEEF00;
+		}
+		ul{
+			padding:5px 0px;
+			li{
+				width:420px;
+				padding: 2px 0px 2px 10px;
+				color:#012D5F;
+			}
+		}
+		
 	}
 }

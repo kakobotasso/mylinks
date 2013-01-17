@@ -2,6 +2,13 @@
 
 #wrapperForm
 	= form_for @link do |f|
+		- if @link.errors.any?
+			#error_explanation
+				%p#labelErrors Ops!
+				%ul
+					- @link.errors.full_messages.each do |msg|
+						%li= msg
+
 		%ul
 			%li
 				%label.text
