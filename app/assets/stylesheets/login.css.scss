@@ -22,6 +22,16 @@
 	width: 810px;
 	height: 380px;
 	background:url("bg-box-login.png") no-repeat 0px 0px;
+	position:relative;
+	#errorNotice{
+		position:absolute;
+		top:30px;
+		left:220px;
+		width:405px;
+		padding:5px 10px;
+		background:#EE0000;
+		border:1px solid #8B0000;
+	}
 	ul{
 		float:left;
 		padding:90px 0px 0px 0px;

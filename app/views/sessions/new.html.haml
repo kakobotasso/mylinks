@@ -7,13 +7,13 @@
 		= csrf_meta_tags
 
 	%body
-		= flash[:notice]
-
 		#wrapperLogin
 			= link_to image_tag("mylinks-logo.png", :alt => "MyLinks"), login_path, :id => "logoLogin"
 
 			#loginBox
 				= form_tag login_path, :autocomplete => 'off' do
+					- if flash[:notice]
+						#errorNotice= flash[:notice]
 					%ul
 						%li
 							%label
