@@ -1,28 +1,27 @@
 class SessionsController < ApplicationController
-	layout false
-	
-	def new
-	end
+  layout false
 
-	def create
-		reset_session
+  def new
+  end
 
-		user = User.find_by_login(params[:login])
-		#user ||= User.new
-		password_encripted = Digest::SHA1.hexdigest(params[:password])
+  def create
+    reset_session
 
-		if user && user.password == password_encripted
-			session[:user_id] = user.id
-			redirect_to dashboard_path 
-		else
-			flash.now[:notice] = "There was a mistake here. Please, try again"
-			render :new
-		end
-	end
+    user = User.find_by_login(params[:login])
+    password_encripted = Digest::SHA1.hexdigest(params[:password])
 
-	def destroy
-		reset_session
-		redirect_to login_path
-	end
+    if user && user.password == password_encripted
+      session[:user_id] = user.id
+      redirect_to dashboard_path
+    else
+      flash.now[:notice] = "There was a mistake here. Please, try again"
+      render :new
+    end
+  end
+
+  def destroy
+    reset_session
+    redirect_to login_path
+  end
 
 end
