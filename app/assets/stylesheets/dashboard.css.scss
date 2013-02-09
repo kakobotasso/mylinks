@@ -25,6 +25,7 @@ $font: "Tahoma", Verdana;
 			height:34px;
 			padding:5px 0px 0px 20px;
 			background:url("bg-category.png") repeat-x 0px 0px;
+			cursor:pointer;
 			img{
 				float: left;
 			}
@@ -41,6 +42,7 @@ $font: "Tahoma", Verdana;
 		.contentLinks{
 			float:left;
 			width:100%;
+			display:none;
 			ul{
 				float:left;
 				width:100%;
