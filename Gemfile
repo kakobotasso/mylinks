@@ -7,7 +7,13 @@ gem 'pg'
 group :development, :test do
 	gem 'sqlite3'
 	gem "rspec-rails"
+	gem "guard"
+	gem "guard-rails"
+	gem "guard-rspec"
+	gem "simplecov"
+	gem "rb-inotify"
 	gem "capybara"
+	gem "factory_girl"
 end
 
 group :assets do
