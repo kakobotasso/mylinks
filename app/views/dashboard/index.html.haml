@@ -1,11 +1,10 @@
 #dashboard
 	#linksBar
-		= link_to image_tag("bt-new-link.png", :alt => "New link"), links_path
+		= link_to image_tag("bt-new-link.png", :alt => "New link"), links_path, id: 'newlink'
 
 	#wrapperLinks
 		- if @facebook.any?
 			.categoryBar
-				= image_tag "facebook-image.png", :alt => "Facebook"
 				%span Facebook
 
 			.contentLinks
@@ -16,7 +15,6 @@
 
 		- if @gag.any?
 			.categoryBar
-				= image_tag "gag-image.png", :alt => "9GAG"
 				%span 9GAG
 
 			.contentLinks
@@ -27,7 +25,6 @@
 
 		- if @article.any?
 			.categoryBar
-				= image_tag "blog-image.png", :alt => "Article"
 				%span Article
 
 			.contentLinks
@@ -38,7 +35,6 @@
 
 		- if @technology.any?
 			.categoryBar
-				= image_tag "technology-image.png", :alt => "Technology"
 				%span Technology
 
 			.contentLinks
@@ -47,9 +43,18 @@
 						%li
 							= link_to l.name, l.link, :target => "_blank"
 
+		- if @jiu.any?
+			.categoryBar
+				%span Jiu-Jitsu
+
+			.contentLinks
+				%ul
+					- @jiu.each do |l|
+						%li
+							= link_to l.name, l.link, :target => "_blank"
+
 		- if @other.any?
 			.categoryBar
-				= image_tag "other-image.png", :alt => "Other"
 				%span Other
 
 			.contentLinks

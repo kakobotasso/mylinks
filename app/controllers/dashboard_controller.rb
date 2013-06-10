@@ -7,5 +7,6 @@ class DashboardController < ApplicationController
 		@article = Link.find_all_by_user_id_and_category(session[:user_id], 2).sort! { |a,b| b.id <=> a.id }
 		@technology = Link.find_all_by_user_id_and_category(session[:user_id], 3).sort! { |a,b| b.id <=> a.id }
 		@other = Link.find_all_by_user_id_and_category(session[:user_id], 4).sort! { |a,b| b.id <=> a.id }
+		@jiu = Link.find_all_by_user_id_and_category(session[:user_id], 5).sort! { |a,b| b.id <=> a.id }
 	end
 end

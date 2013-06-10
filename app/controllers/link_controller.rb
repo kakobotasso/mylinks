@@ -12,7 +12,7 @@ class LinkController < ApplicationController
 		@link.user_id = session[:user_id]
 
 		if @link.save
-			redirect_to dashboard_path, notice: 'Link saved successfully'
+			redirect_to dashboard_path
 		else
 			render action: "new"
 		end
@@ -25,7 +25,8 @@ class LinkController < ApplicationController
 			["9GAG", 1],
 			["Article", 2],
 			["Technology", 3],
-			["Other", 4]
+			["Other", 4],
+			["Jiu-Jitsu", 5]
 		]
 	end
 end
