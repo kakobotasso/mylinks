@@ -4,17 +4,11 @@
 	</div>
 
 	<div id="wrapperLinks">
-		<% if @facebook.any? %>
-			<div class="categoryBar">
-				<span>Facebook</span>
-			</div>
-			<div class="contentLinks">
-				<ul>
-					<% @facebook.each do |l| %>
-						<li><%= link_to l.name, l.link, :target => "_blank" %></li>
-					<% end %>
-				</ul>
-			</div>
-		<% end %>
+		<%= html_category(@facebook, 'Facebook') %>
+		<%= html_category(@gag, '9GAG') %>
+		<%= html_category(@article, 'Article') %>
+		<%= html_category(@technology, 'Technology') %>
+		<%= html_category(@jiu, 'Jiu-jistu') %>
+		<%= html_category(@other, 'Other') %>
 	</div>
 </div>
