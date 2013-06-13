@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyLinks</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+
+	<body>
+		<div id="wrapperLogin">
+			<%= link_to image_tag("mylinks-logo.png", :alt => "MyLinks"), login_path, :id => "logoLogin" %>
+
+			<div id="loginBox">
+				<%= form_tag login_path do %>
+					<% if flash[:notice] %>
+						<div id="errorNotice"><%= flash[:notice] %></div>
+					<% end %>
+
+					<ul>
+						<li>
+							<span>Login:</span>
+							<%= text_field_tag :login, "", :class => "text" %>
+						</li>
+
+						<li>
+							<span>Password:</span>
+							<%= password_field_tag :password, "", :class => "text" %>
+						</li>
+
+						<li><%= image_submit_tag("bt-login.png", :id => 'login') %></li>
+					</ul>
+				<% end %>
+			</div>
+		</div>
+	</body>
+</html>

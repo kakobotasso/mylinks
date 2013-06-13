@@ -1,0 +1,20 @@
+<div id="dashboard">
+	<div id="linksBar">
+		<%= link_to image_tag("bt-new-link.png", :alt => "New link"), links_path, id: 'newlink' %>
+	</div>
+
+	<div id="wrapperLinks">
+		<% if @facebook.any? %>
+			<div class="categoryBar">
+				<span>Facebook</span>
+			</div>
+			<div class="contentLinks">
+				<ul>
+					<% @facebook.each do |l| %>
+						<li><%= link_to l.name, l.link, :target => "_blank" %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+	</div>
+</div>

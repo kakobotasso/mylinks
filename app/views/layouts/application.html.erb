@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyLinks</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<header>
+				<%= link_to image_tag("mylinks-logo.png", :alt => "MyLinks"), dashboard_path, :id => "mylinksLogo" %>
+				<div id="rightHeader">
+					<span>welcome <strong><%= current_user.name %></strong></span>
+					<span><%= link_to "logout [X]", logout_path %></span>
+				</div>
+			</header>
+
+			<section>
+				<%= yield %>
+			</section>
+		</div>
+	</body>
+</html>
