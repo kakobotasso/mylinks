@@ -19,7 +19,7 @@ end
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
-
+  gem 'bootstrap-sass'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
 
@@ -27,4 +27,3 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "haml"

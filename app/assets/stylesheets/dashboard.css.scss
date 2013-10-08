@@ -1,20 +1,10 @@
-$font: "Tahoma", Verdana;
+$font: Arial;
 
 #dashboard{
 	float:left;
 	width:100%;
 	padding:20px 0px 0px 0px;
-	#linksBar{
-		float:left;
-		width:100%;
-		height:68px;
-		background:url("links-bar.gif") no-repeat 0px 0px;	
-		a{
-			float:right;
-			display:inline;
-			margin:9px 9px 0px 0px;
-		}
-	}
+	
 	#wrapperLinks{
 		float:left;
 		width:100%;
@@ -23,9 +13,12 @@ $font: "Tahoma", Verdana;
 			float:left;
 			width:970px;
 			height:34px;
-			padding:5px 0px 0px 20px;
-			background:url("bg-category.png") repeat-x 0px 0px;
+			padding:15px 0px 0px 20px;
+			background:url("bg-category.png") repeat 0px 0px;
 			cursor:pointer;
+			border:1px solid #FFD700;
+			display:inline-block;
+			margin:0px 0px 5px 0px;
 			img{
 				float: left;
 			}
@@ -36,7 +29,7 @@ $font: "Tahoma", Verdana;
 				text-transform:uppercase;
 				font-weight:bold;
 				padding:2px 0px 0px 10px;
-				color:#FEEF00;
+				color:#FFD700;
 			}
 		}
 		.contentLinks{

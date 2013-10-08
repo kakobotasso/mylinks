@@ -1,6 +1,9 @@
-<div id="dashboard">
+<div id="dashboard" class="container">
 	<div id="linksBar">
-		<%= link_to image_tag("bt-new-link.png", :alt => "New link"), links_path, id: 'newlink' %>
+		<span>Links</span>
+		<%#= link_to 'New category', 'javascript:void(0);', class: 'btn btn-primary', id: 'newcategory' %>
+		<%= link_to 'New link', links_path, class: 'btn btn-primary', id: 'newlink' %>
+		<%#= link_to image_tag("bt-new-link.png", :alt => "New link"), links_path, id: 'newlink' %>
 	</div>
 
 	<div id="wrapperLinks">
