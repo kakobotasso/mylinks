@@ -27,7 +27,7 @@
 			<li>
 				<label class="text">
 					<span> Category: </span>
-					<%= f.select :category, category, { :prompt => "Choose one category" } %>
+					<%= f.collection_select :category_id, @categories, :id, :name, {:prompt => 'Choose one category' } %>
 				</label>
 			</li>
 

@@ -1,14 +1,14 @@
 class LinkController < ApplicationController
 	before_filter :require_logged_user
 
-	helper_method :category
-
 	def new
 		@link = Link.new
+		@categories = Category.where(user_id: session[:user_id]).order(:name)
 	end
 
 	def create
 		@link = Link.new(params[:link])
+		@categories = Category.where(user_id: session[:user_id]).order(:name)
 		@link.user_id = session[:user_id]
 
 		if @link.save
@@ -18,15 +18,4 @@ class LinkController < ApplicationController
 		end
 	end
 
-	private
-	def category
-		@category = [
-			["Facebook", 0],
-			["9GAG", 1],
-			["Article", 2],
-			["Technology", 3],
-			["Other", 4],
-			["Jiu-Jitsu", 5]
-		]
-	end
 end
