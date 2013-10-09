@@ -1,0 +1,39 @@
+<div id="linksBar" class="separatorLinksBar">
+	<span>Links</span>
+	<%= link_to "Return to dashboard", dashboard_path, class: "btn btn-primary" %>
+	<%= link_to 'New link', links_path, class: 'btn btn-primary', id: 'newlink' %>
+</div>
+<div id="wrapperForm">
+	<%= form_for @category do |f| %>
+		<% if @category.errors.any? %>
+			<div id="error_explanation">
+				<p id="labelErrors">Ops!</p>
+				<ul>
+					<% @category.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<ul>
+			<li>
+				<label class="text">
+					<span> Name*: </span>
+					<%= f.text_field :name %>
+				</label>
+			</li>
+
+			<li>
+				<label class="text">
+					<span> Description: </span>
+					<%= f.text_area :description %>
+				</label>
+			</li>
+
+			<li>
+				<span class="submitButton"> <%= f.submit "Create category", class: "btn btn-warning" %> </span>
+			</li>
+		</ul>
+	<% end %>
+</div>

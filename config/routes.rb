@@ -15,4 +15,9 @@ Mylinks::Application.routes.draw do
   	post "/new-link", :action => :create
   end
 
+  controller :category do
+    get "/new-category", :action => :new, :as => :categories
+    post "/new-category", :action => :create
+  end
+
 end
