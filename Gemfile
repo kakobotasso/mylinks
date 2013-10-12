@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '3.2.12'
 
 gem 'pg'
 
@@ -14,6 +14,7 @@ group :development, :test do
 	gem "rb-inotify"
 	gem "capybara"
 	gem "factory_girl"
+	gem "selenium-webdriver"
 end
 
 group :assets do
