@@ -1,0 +1,39 @@
+<%= form_for @link do |f| %>
+    <% if @link.errors.any? %>
+      <div id="error_explanation">
+        <p id="labelErrors">Ops!</p>
+        <ul>
+          <% @link.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <ul>
+      <li>
+        <label class="text">
+          <span> Name: </span>
+          <%= f.text_field :name %>
+        </label>
+      </li>
+
+      <li>
+        <label class="text">
+          <span> Category: </span>
+          <%= f.collection_select :category_id, @categories, :id, :name, {:prompt => 'Choose one category' } %>
+        </label>
+      </li>
+
+      <li>
+        <label class="text">
+          <span> Link: </span>
+          <%= f.text_field :link %>
+        </label>
+      </li>
+
+      <li>
+        <span class="submitButton"> <%= f.submit "Create link", class: "btn btn-warning" %> </span>
+      </li>
+    </ul>
+  <% end %>

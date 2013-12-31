@@ -11,8 +11,11 @@ Mylinks::Application.routes.draw do
   end
 
   controller :link do
-  	get "/new-link", :action => :new, :as => :links
-  	post "/new-link", :action => :create
+  	get     "/new-link",            :action => :new,      :as => :links
+  	post    "/new-link",            :action => :create
+    get     "/new-link/:id/edit",   :action => :edit,     :as => :edit_link
+    put     "/new-link/:id",        :action => :update
+    delete  "/new-link/:id",        :action => :destroy
   end
 
   controller :category do

@@ -8,7 +8,15 @@ module ApplicationHelper
 				html += '<div class="contentLinks">'
 				html += '<ul>'
 				collection.links.each do |l|
-					html += "<li>#{link_to l.name, l.link, :target => '_blank'} </li>"
+					html += "
+									<li>
+										#{link_to l.name, l.link, :target => '_blank'} 
+										<div class='editBox'>
+											<span><a href='#{edit_link_path(l.id)}'>Edit</a></span>
+											<span><a href='javascript:void(0);'>Delete</a></span>
+										</div>
+									</li>
+									"
 				end
 				html += '</ul>'
 				html += '</div>'

@@ -42,8 +42,29 @@ $font: Arial;
 				padding:10px 0px 20px 0px;
 				li{
 					float:left;
-					width:80%;
+					width:90%;
 					padding:0px 0px 0px 20px;
+					
+					&:hover{
+						background:url("bg-category.png") repeat 0px 0px;
+						.editBox{
+							display:block;
+						}
+					}
+
+					.editBox{
+						display:none;
+						float:right;
+						span{
+							float:left;
+							padding:0px 5px;
+						}
+						a{
+							font-weight: normal;
+							color:#8B0000;
+						}
+					}
+
 					a{
 						font-family:$font;
 						color:#FEEF00;
